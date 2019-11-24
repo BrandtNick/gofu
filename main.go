@@ -17,7 +17,7 @@ const (
 // Allowed mime types
 var allowedTypes = []string{"image/jpeg", "image/gif", "image/png"}
 
-func assertTypeIsAllowed(mimeType string) bool {
+func assertIsAllowedType(mimeType string) bool {
 	for _, v := range allowedTypes {
 		if mimeType == v {
 			return true
@@ -42,7 +42,7 @@ func upload(w http.ResponseWriter, r *http.Request) {
 	defer uploadedFile.Close()
 
 	mimeType := handler.Header["Content-Type"][0]
-	allowedType := assertTypeIsAllowed(mimeType)
+	allowedType := assertIsAllowedType(mimeType)
 	if !allowedType {
 		w.Write([]byte("File type not supported"))
 		return
