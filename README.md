@@ -1,9 +1,9 @@
 ## Go File Uploader (GOFU)
-Simple file uploader 
+Simple file uploader http server
 
 #### Installation
 ```sh
-  go get https://github.com/BrandtNick/gofu
+  git clone https://github.com/BrandtNick/gofu
 ```
 
 #### Usage
